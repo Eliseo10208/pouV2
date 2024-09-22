@@ -80,12 +80,6 @@ function App ()
                 <div>
                     <button disabled={canMoveSprite} className="button" onClick={moveSprite}>Alternar Movimiento</button>
                 </div>
-                <div className="spritePosition">Posición del Sprite:
-                    <pre>{`{\n  x: ${spritePosition.x}\n  y: ${spritePosition.y}\n}`}</pre>
-                </div>
-                <div>
-                    <button className="button" onClick={addSprite}>Agregar Nuevo Sprite</button>
-                </div>
             </div>
         </div>
     )
