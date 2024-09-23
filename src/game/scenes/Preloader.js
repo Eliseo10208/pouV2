@@ -41,6 +41,7 @@ export class Preloader extends Scene
         this.load.image('logo', 'logo.png');
         this.load.image('badPou', 'badPou.png');
         this.load.image('godPou', 'skinPouChivas.png'); 
+        this.load.image('zombiePou', 'zombiePou.png'); // Cargar la imagen del zombiePou
     }
 
     // El método create se ejecuta cuando todos los recursos han sido cargados

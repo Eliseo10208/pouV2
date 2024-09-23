@@ -9,13 +9,18 @@ export class Game extends Scene {
     create() {
         this.cameras.main.setBackgroundColor(0x00ff00);
 
+        // Configurar los límites del mundo
+        this.physics.world.setBounds(0, 0, this.scale.width, this.scale.height);
+
         this.godPou = this.physics.add.image(100, 100, 'godPou');
         this.godPou.setDisplaySize(100, 100);
         this.godPou.body.setCircle(100, 100, 100); // Ajustar el área de colisión de la estrella buena
+        this.godPou.setCollideWorldBounds(true); // Hacer que godPou colisione con los límites del mundo
 
         this.badPou = this.physics.add.image(924, 668, 'badPou').setTint(0xff0000); 
         this.badPou.setDisplaySize(100, 100);
         this.badPou.body.setCircle(100, 100, 100); // Ajustar el área de colisión de la estrella mala
+        this.badPou.setCollideWorldBounds(true); // Hacer que badPou colisione con los límites del mundo
 
         this.keys = this.input.keyboard.addKeys('W,A,S,D');
         this.cursors = this.input.keyboard.createCursorKeys();

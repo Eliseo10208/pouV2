@@ -63,6 +63,30 @@ function App ()
         }
     }
 
+    const changeToZombieGame = () => {
+
+        const scene = phaserRef.current.scene;
+
+        if (scene)
+        {
+            scene.scene.start('ZombieGame');
+        }
+    }
+    
+    const changeToGame = () => {
+
+        const scene = phaserRef.current.scene;
+
+        if (scene)
+        {
+            scene.scene.start('MainMenu');
+        }
+    }
+
+    const reloadApp = () => {
+        window.location.reload();
+    }
+
     // Evento emitido desde el componente PhaserGame
     const currentScene = (scene) => {
 
@@ -75,10 +99,19 @@ function App ()
             <PhaserGame ref={phaserRef} currentActiveScene={currentScene} />
             <div>
                 <div>
-                    <button className="button" onClick={changeScene}>Iniciar Juego</button>
+                    <button className="button" onClick={changeScene}>Modo pvp</button>
                 </div>
                 <div>
                     <button disabled={canMoveSprite} className="button" onClick={moveSprite}>Alternar Movimiento</button>
+                </div>
+                <div>
+                    <button className="button" onClick={changeToZombieGame}>Modo Zombie</button>
+                </div>
+                <div>
+                    <button className="button" onClick={changeToGame}>Volver al Menu</button>
+                </div>
+                <div>
+                    <button className="button" onClick={reloadApp}>Reiniciar Juego</button>
                 </div>
             </div>
         </div>
